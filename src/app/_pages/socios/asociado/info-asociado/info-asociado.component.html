@@ -1,0 +1,131 @@
+<form [formGroup]="elemento">
+    <div class="col-12">
+        <!-- Card -->
+        <div class="card">
+            <div class="row">
+                <h4 class="card-title col-md-9 col-sm">Asociado Actual</h4>
+                <div class="col-md-3 col-sm ">
+                    <button class="btn btn-outline-warning"(click)="cambiarContrasenia()">Cambiar Contraseña</button>
+                </div>
+            </div>
+    
+            <div class="card-body form-group row">
+    
+                <div class="col-md-2 col-sm">
+                    <h5>Codigo</h5>
+    
+                    <input type="text" class="form-control"  formControlName="codigo" [attr.disabled]="true">
+    
+                </div>
+                <div class="col-md-5 col-sm">
+                    <h5>Nombre</h5>
+                    <input type="text" class="form-control"  formControlName="nombre" [attr.disabled]="true">
+    
+                </div>
+                <div class="col-md-3 col-sm">
+                    <h5>Estado</h5>
+                    <input type="text" class="form-control"  formControlName="estado" [attr.disabled]="true">
+                </div>
+    
+            </div>
+        </div>
+        <!-- Card -->
+    </div>
+    <div class="col-12">
+        <!-- Card -->
+        <div class="card">
+            <div class="row">
+                <h4 class="card-title col-md-9 col-sm">Datos del Asociado</h4>
+            </div>
+    
+            <div class="card-body form-group row">
+    
+                <div class="col-md-8 col-sm">
+                    <h5>Tipo de Sociedad</h5>
+    
+                    <input type="text" class="form-control"  formControlName="tipoSociedad" [attr.disabled]="true">
+    
+                </div>
+                <div class="col-md-2 col-sm">
+                    <h5>Tipo Identificación</h5>
+                    <input type="text" class="form-control"  formControlName="tipoIdentificación" [attr.disabled]="true">
+    
+                </div>
+                <div class="col-md-2 col-sm">
+                    <h5>Num. Identificación</h5>
+                    <input type="text" class="form-control"  formControlName="numID" [attr.disabled]="true">
+                </div>
+    
+                <div class="col-md-8 col-sm">
+                    <h5>Representante Legal</h5>
+    
+                    <input type="text" class="form-control"  formControlName="representanteLegal" [attr.disabled]="true">
+    
+                </div>
+                <div class="col-md-2 col-sm">
+                    <h5>Fecha Ingreso</h5>
+                    <input type="text" class="form-control"  formControlName="fechaIngreso" [attr.disabled]="true">
+    
+                </div>
+                <div class="col-md-2 col-sm">
+                    <h5>Fecha Retiro</h5>
+                    <input type="text" class="form-control"  formControlName="fechaRetiro" [attr.disabled]="true">
+                </div>
+    
+            </div>
+        </div>
+        <!-- Card -->
+    </div>
+    <div>
+        <div class="row">
+            <button type="button" class="col-6 btn btn-outline-info" routerLink="direcciones" routerLinkActive="active">
+                Direcciones
+            </button>
+            <button type="button" class="col-6 btn btn-outline-warning" routerLink="personasAutorizadas" routerLinkActive="active">
+                Personas autorizadas
+            </button>
+        </div>
+    
+        <router-outlet></router-outlet>
+    
+    </div>
+    <div class="col-12">
+        <!-- Card -->
+        <div class="card fondoAlertas">
+            <div class="card-header bg-success text-white" style="text-align: center;">
+                <h1 class="card-title text-white">
+                    Alertas
+                </h1>
+            </div>
+            <div class="row">
+                <div class="card fondoAlertas1 col-sm col-md-4">
+                    <div class="card-body text-center text-white">
+                        <h4 class="card-title"><b> Alertas Denuncios </b></h4>
+                        <div class="">
+                            <input type="" formControlName="alertasDenuncios" [attr.disabled]="true" >
+                        </div>
+                    </div>
+                </div>
+                <div class="card fondoAlertas1 col-sm col-md-4">
+                    <div class="card-body text-center text-white">
+                        <h4 class="card-title"> <b> Alertas Traspasos</b></h4>
+                        <div class="">
+                            <input type="" formControlName="alertasTraspasos" [attr.disabled]="true">
+                        </div>
+                    </div>
+                </div>
+                <div class="card fondoAlertas1 col-sm col-md-4">
+                    <div class="card-body text-center text-white">
+                        <h4 class="card-title"><b>Alertas Embriones</b></h4>
+                        <div class="">
+                            <input type="" formControlName="alertasEmbriones" [attr.disabled]="true">
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- Card -->
+    </div>
+</form>
+

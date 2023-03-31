@@ -1,0 +1,85 @@
+<div class="card">
+    <div class="card-header bg-info text-white" style="text-align: center;">
+        <h4 class="card-title text-white">
+            Informe
+        </h4>
+    </div>
+    <div class="card-body">
+        <div class=" no-block align-items-center mat-elevation-z8">
+            <mat-form-field style="padding: 10px;">
+                <mat-label>Filter</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+            </mat-form-field>
+
+            <section class="example-container mat-elevation-z8" tabindex="0">
+                <table mat-table [dataSource]="dataSource" class="table table-striped " matSort>
+
+                    <ng-container matColumnDef="Registro">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header> Fecha
+                            Registro </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Registro}} </td>
+                    </ng-container>
+
+
+                    <ng-container matColumnDef="Numeros">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header>
+                            Numeros </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Numeros}} </td>
+                    </ng-container>
+
+
+                    <ng-container matColumnDef="Raza">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header>Raza </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Raza}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Tiquete">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header> Tiquete </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Tiquete}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Nombre">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header>Tipo
+                            Nombre</th>
+                        <td mat-cell *matCellDef="let element"> {{element.Nombre}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Sx">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header>
+                            Sx </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Sx}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="FhNace">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header>
+                            Fh. Nace </th>
+                        <td mat-cell *matCellDef="let element"> {{element.FhNace}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Estado">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header>
+                            Estado </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Estado}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="SubEstado">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header>
+                            SubEstado </th>
+                        <td mat-cell *matCellDef="let element"> {{element.SubEstado}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Criador">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header>
+                            Criador </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Criador}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+                    <tr class="mat-row" *matNoDataRow>
+                        <td class="mat-cell" colspan="10">No se encontraron datos </td>
+                    </tr>
+                </table>
+            </section>
+            <mat-paginator  [pageSize]="10" [pageSizeOptions]="[ 25, 50, 100,200]" showFirstLastButtons
+                aria-label="Selecciona la pagina">
+            </mat-paginator>
+        </div>
+    </div>
+</div>

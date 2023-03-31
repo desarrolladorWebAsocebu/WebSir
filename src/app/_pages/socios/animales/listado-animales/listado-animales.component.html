@@ -1,0 +1,112 @@
+<div class="card">
+    <div class="card-header bg-info text-white" style="text-align: center;">
+        <h4 class="card-title text-white">
+            Consulta de Animales
+        </h4>
+    </div>
+    <div class="card-body">
+        <div class=" no-block align-items-center mat-elevation-z8">
+            <mat-form-field style="padding: 10px;">
+                <mat-label>Filtro</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="EJ. GY || 2005.04.03 || ROJO Y BLANCO"
+                    #input>
+            </mat-form-field>
+
+            <section class="example-container mat-elevation-z8" tabindex="0">
+                <table mat-table [dataSource]="dataSource" class="table table-striped " matSort>
+
+                    <ng-container matColumnDef="Mostrar">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center; width: 13px;" mat-sort-header>
+                            Mostrar </th>
+                        <td mat-cell *matCellDef="let element">
+                            <button class="btn btn-outline-info" (click)="detalles(element.Registro)">
+                                <i class="sl-icon-share-alt"></i>
+                            </button>
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Registro">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;width: 100px;" mat-sort-header>
+                            Registro </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Registro}} </td>
+                    </ng-container>
+
+
+                    <ng-container matColumnDef="Numero">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center; width: 20px;" mat-sort-header>
+                            Numero </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Numero}} </td>
+                    </ng-container>
+
+
+                    <ng-container matColumnDef="NombreEjemplar">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;width: 200px;" mat-sort-header>
+                            Nombre<br>Ejemplar </th>
+                        <td mat-cell *matCellDef="let element"> {{element.NombreEjemplar}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Raza">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;width: 10px;" mat-sort-header> Raza </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Raza}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Sx">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;width: 10px;" mat-sort-header>
+                            sx</th>
+                        <td mat-cell *matCellDef="let element"> {{element.Sx}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="CodHda">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;width: 30px;" mat-sort-header>
+                            CodHda </th>
+                        <td mat-cell *matCellDef="let element"> {{element.CodHda}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="FhNace">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;width: 20px;" mat-sort-header>
+                            Fh. Nace </th>
+                        <td mat-cell *matCellDef="let element"> {{element.FhNace}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Estado">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header>
+                            Estado </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Estado}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="SubEstado">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header>
+                            SubEstado </th>
+                        <td mat-cell *matCellDef="let element"> {{element.SubEstado}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="NombreHacienda">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header>
+                            Nombre <br>Hacienda </th>
+                        <td mat-cell *matCellDef="let element"> {{element.NombreHacienda}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Extemporaneidad">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header>
+                            Extemporaneidad </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Extemporaneidad}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Genotipificado">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header>
+                            Genotipificado </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Genotipificado}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Color">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header>
+                            Color </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Color}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+                    <tr class="mat-row" *matNoDataRow>
+                        <td class="mat-cell" colspan="10">No se encontraron datos </td>
+                    </tr>
+                </table>
+            </section>
+            <mat-paginator [pageSize]="10" [pageSizeOptions]="[ 25, 50, 100,200]" showFirstLastButtons
+                aria-label="Selecciona la pagina">
+            </mat-paginator>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,205 @@
+<form  [formGroup]="datosBasicos">
+    <div class="col-12 row">
+        <!-- Card -->
+        <div class="col-6 col-sm">
+            <div class="card">
+                <div class="row">
+                    <h4 class="card-title col col-sm">Clasificadas</h4>
+                </div>
+
+                <div class="card-body form-group row">
+
+                    <div class="col-md-3 col-sm">
+                        <h5>Generación</h5>
+                        <input type="text" class="form-control" formControlName="CodigoGeneracion" [attr.disabled]="true">
+
+                    </div>
+                    <div class="col-md-5 col-sm">
+                        <h5>Fecha Clasif.</h5>
+                        <input type="text" class="form-control" formControlName="CodigoGeneracion" [attr.disabled]="true">
+
+                    </div>
+                    <div class="col-md-3 col-sm">
+                        <h5>Puntos</h5>
+                        <input type="text" class="form-control" formControlName="PuntosAnimal" [attr.disabled]="true">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Card -->
+        <!-- Card -->
+        <div class="col-6 col-sm">
+            <div class="card">
+                <div class="row">
+                    <h4 class="card-title col col-sm">Estado</h4>
+                </div>
+
+                <div class="card-body form-group row">
+
+                    <div class="col-md-3 col-sm">
+                        <h5>Estado</h5>
+                        <input type="text" class="form-control" formControlName="EstadoAnimal" [attr.disabled]="true">
+
+                    </div>
+                    <div class="col-md-5 col-sm">
+                        <h5>Sub Estado</h5>
+                        <input type="text" class="form-control" formControlName="CodigoSubEstado" [attr.disabled]="true">
+
+                    </div>
+                    <div class="col-md-4 col-sm">
+                        <h5>Bloqueo Ferias </h5>
+                        <input type="text" class="form-control" formControlName="BloqueadoFerias" [attr.disabled]="true">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Card -->
+        <!-- Card -->
+        <div class="card">
+            <div class="row">
+                <h4 class="card-title col-md-9 col-sm">Propietario / Criador</h4>
+            </div>
+
+            <div class="card-body form-group row">
+
+                <div class="col-md-4 col-sm">
+                    <h5>Propietario</h5>
+                    <input type="text" class="form-control" formControlName="NombreSocio" [attr.disabled]="true">
+                </div>
+                <div class="col-md-4 col-sm">
+                    <h5>-</h5>
+                    <input type="text" class="form-control" formControlName="CodigoHda" [attr.disabled]="true">
+                </div>
+                <div class="col-md-4 col-sm">
+                    <h5>-</h5>
+                    <input type="text" class="form-control" formControlName="NombreHdaProp" [attr.disabled]="true">
+                </div>
+
+                <div class="col-md-6 col-sm row">
+                    <h5 >Ciudad Hda.</h5>
+                    <input type="text" class="form-control " formControlName="CiudadHda" [attr.disabled]="true">
+                </div>
+                <div class="col-md-6 col-sm row">
+                    <h5 class="">División</h5>
+                    <input type="text" class="form-control " formControlName="NombreDivision" [attr.disabled]="true">
+                </div>
+
+                <div class="col-md-4 col-sm">
+                    <h5>Criador</h5>
+                    <input type="text" class="form-control" formControlName="NombreCriador" [attr.disabled]="true">
+                </div>
+                <div class="col-md-4 col-sm">
+                    <h5>-</h5>
+                    <input type="text" class="form-control" formControlName="CodigoHdaIngreso" [attr.disabled]="true">
+                </div>
+                <div class="col-md-4 col-sm">
+                    <h5>-</h5>
+                    <input type="text" class="form-control" formControlName="NombreHdaIngreso" [attr.disabled]="true">
+                </div>
+            </div>
+        </div>
+        <!-- Card -->
+        <!-- Card -->
+        <div class="card">
+            <div class="row">
+                <h4 class="card-title col-md-9 col-sm">Padres</h4>
+            </div>
+
+            <div class="card-body form-group row">
+
+                <div class="col-md-2 col-sm">
+                    <h5>Número Registro</h5>
+                    <input type="text" class="form-control" formControlName="PadreNoRegistro" [attr.disabled]="true">
+                </div>
+                <div class="col-md-4 col-sm">
+                    <h5>Nombre</h5>
+                    <input type="text" class="form-control" formControlName="PadreNombre" [attr.disabled]="true">
+                </div>
+                <div class="col-md-2 col-sm">
+                    <h5>Número </h5>
+                    <input type="text" class="form-control" formControlName="PadreNumero" [attr.disabled]="true">
+                </div>
+                <div class="col-md-2 col-sm">
+                    <h5>Raza </h5>
+                    <input type="text" class="form-control" formControlName="PadreRaza" [attr.disabled]="true">
+                </div>
+                <div class="col-md-2 col-sm">
+                    <h5>% Raza </h5>
+                    <input type="text" class="form-control" formControlName="PadrePorcRaza" [attr.disabled]="true">
+                </div>
+
+
+                <div class="col-md-2 col-sm">
+                    <h5>Número Registro</h5>
+                    <input type="text" class="form-control" formControlName="MadreNoRegistro" [attr.disabled]="true">
+                </div>
+                <div class="col-md-4 col-sm">
+                    <h5>Nombre</h5>
+                    <input type="text" class="form-control" formControlName="MadreNombre" [attr.disabled]="true">
+                </div>
+                <div class="col-md-2 col-sm">
+                    <h5>Número </h5>
+                    <input type="text" class="form-control" formControlName="MadreNumero" [attr.disabled]="true">
+                </div>
+                <div class="col-md-2 col-sm">
+                    <h5>Raza </h5>
+                    <input type="text" class="form-control" formControlName="MadreRaza" [attr.disabled]="true">
+                </div>
+                <div class="col-md-2 col-sm">
+                    <h5>% Raza </h5>
+                    <input type="text" class="form-control" formControlName="MadrePorcRaza" [attr.disabled]="true">
+                </div>
+
+            </div>
+        </div>
+        <!-- Card -->
+        <!-- Card -->
+        <div class="col-6 row">
+            <div class="card">
+                <div class="row">
+                    <h4 class="card-title col-md-9 col-sm">Embriones</h4>
+                </div>
+
+                <div class="card-body form-group row">
+
+                    <div class="col col-sm">
+                        <h5>Documento</h5>
+                        <input type="text" class="form-control" formControlName="NoDoc" [attr.disabled]="true">
+
+                    </div>
+                    <div class="col col-sm">
+                        <h5>Vaca Receptora</h5>
+                        <input type="text" class="form-control" formControlName="NumeroReceptora" [attr.disabled]="true">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Card -->
+        <!-- Card -->
+        <div class="col-6 row">
+            <div class="card">
+                <div class="row">
+                    <h4 class="card-title col-md-9 col-sm">Genotipificado</h4>
+                </div>
+
+                <div class="card-body form-group row">
+
+                    <div class="col col-sm">
+                        <h5>Generación</h5>
+                        <input type="text" class="form-control" formControlName="idgenotipificacion" [attr.disabled]="true">
+
+                    </div>
+                    <div class="col col-sm">
+                        <h5>Fecha Clasif.</h5>
+                        <input type="text" class="form-control" formControlName="FechaGeno" [attr.disabled]="true">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Card -->
+    </div>
+</form>

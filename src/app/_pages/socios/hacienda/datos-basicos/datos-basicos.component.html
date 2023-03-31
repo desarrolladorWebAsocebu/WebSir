@@ -1,0 +1,130 @@
+<form [formGroup]="elemento">
+    <div class="col-12">
+        <!-- Card -->
+        <div class="card">
+            
+    
+            <div class="card-body form-group row">
+    
+                <div class="col-md-3 col-sm">
+                    <h5>Codigo</h5>
+    
+                    <input type="text" class="form-control"  formControlName="codigo" [attr.disabled]="true">
+    
+                </div>
+                <div class="col-md-6 col-sm">
+                    <h5>Nombre</h5>
+                    <input type="text" class="form-control"  formControlName="nombre" [attr.disabled]="true">
+    
+                </div>
+                <div class="col-md-3 col-sm">
+                    <h5>Prefijo</h5>
+                    <input type="text" class="form-control"  formControlName="prefijo" [attr.disabled]="true">
+                </div>
+
+
+
+                <div class="col-md-3 col-sm">
+                    <h5>Estado</h5>
+                    <input type="text" class="form-control"  formControlName="estado" [attr.disabled]="true">
+                </div>
+                <div class="col-md-6 col-sm">
+                    <h5>Cuidad</h5>
+    
+                    <input type="text" class="form-control"  formControlName="ciudad" [attr.disabled]="true">
+    
+                </div>
+                <div class="col-md-3 col-sm">
+                    <h5>Vereda</h5>
+                    <input type="text" class="form-control"  formControlName="vereda" [attr.disabled]="true">
+    
+                </div>
+
+
+
+                <div class="col-md-12 col-sm">
+                    <h5>Obs.</h5>
+                    <input type="text" class="form-control"  formControlName="Obs" [attr.disabled]="true">
+                </div>
+    
+            </div>
+        </div>
+        <!-- Card -->
+    </div>
+    <div class="col-12">
+        <!-- Card -->
+        <div class="card">
+            <div class="row">
+                <h4 class="card-title col-md-9 col-sm">Contacto</h4>
+            </div>
+    
+            <div class="card-body form-group row">
+    
+                <div class="col-md-8 col-sm">
+                    <h5>Nombre</h5>
+                    <input type="text" class="form-control"  formControlName="name" [attr.disabled]="true">
+                </div>
+                <div class="col-md-2 col-sm">
+                    <h5>Celular</h5>
+                    <input type="text" class="form-control"  formControlName="Celular" [attr.disabled]="true">
+                </div>
+                <div class="col-md-2 col-sm">
+                    <h5>Fax</h5>
+                    <input type="text" class="form-control"  formControlName="Fax" [attr.disabled]="true">
+                </div>
+    
+                <div class="col-md-8 col-sm">
+                    <h5>Correo</h5>
+                    <input type="text" class="form-control"  formControlName="Correo" [attr.disabled]="true">
+    
+                </div>
+                <div class="col-md-2 col-sm">
+                    <h5>Telefono Nro 1</h5>
+                    <input type="text" class="form-control"  formControlName="tel1" [attr.disabled]="true">
+    
+                </div>
+                <div class="col-md-2 col-sm">
+                    <h5>Telefono Nro 2</h5>
+                    <input type="text" class="form-control"  formControlName="tel2" [attr.disabled]="true">
+    
+                </div>
+            </div>
+        </div>
+        <!-- Card -->
+    </div>
+    <div class="col-12">
+        <!-- Card -->
+        <div class="card">
+            <div class="row">
+                <h4 class="card-title col-md-9 col-sm">Otros datos</h4>
+            </div>
+    
+            <div class="card-body form-group row">
+    
+
+                <div class="col-md-4">
+                    <div class="col-sm">
+                        <h5>Loc. Número</h5>
+                        <input type="text" class="form-control"  formControlName="LocNumero" [attr.disabled]="true">
+                    </div>
+                    <div class="col-sm">
+                        <h5>Loc. Hierro</h5>
+                        <input type="text" class="form-control"  formControlName="LocHierro" [attr.disabled]="true">
+                    </div>
+                </div>
+                
+
+
+                <div class="col-md-4 col-sm">
+                    <h5>Hierro</h5>
+                    <img src="{{hierroHda1}}" alt="">
+                </div>
+    
+                
+            </div>
+        </div>
+        <!-- Card -->
+    </div>
+    
+</form>
+

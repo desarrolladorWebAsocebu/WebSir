@@ -1,0 +1,108 @@
+<div class="card">
+    <div class="card-header bg-info text-white" style="text-align: center;">
+        <h4 class="card-title text-white">
+            Consulta de Animales
+        </h4>
+    </div>
+    <div class="card-body">
+        <div class=" no-block align-items-center mat-elevation-z8">
+            <mat-form-field style="padding: 10px;">
+                <mat-label>Filtro</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="EJ. GY || 2005.04.03 || ROJO Y BLANCO"
+                    #input>
+            </mat-form-field>
+
+            <section class="example-container mat-elevation-z8" tabindex="0">
+                <table mat-table [dataSource]="dataSource" class="table table-striped " matSort>
+
+                    <ng-container matColumnDef="Registro">
+                        <th mat-header-row *matHeaderCellDef  mat-sort-header>
+                            Registro </th>
+                        <td mat-row *matCellDef="let element">{{element.registroAnimal}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="Numero">
+                        <th mat-header-row *matHeaderCellDef  mat-sort-header>
+                            Número </th>
+                        <td mat-row *matCellDef="let element"> {{element.numeroAnimal}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Raza">
+                        <th mat-header-row *matHeaderCellDef style="text-align: center; " mat-sort-header>
+                            Raza </th>
+                        <td mat-row *matCellDef="let element"> {{element.codigoRaza}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Tiquete">
+                        <th mat-header-row *matHeaderCellDef  mat-sort-header>
+                            Tiquete </th>
+                        <td mat-row *matCellDef="let element"> {{element.noTiquete}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Nombre">
+                        <th mat-header-row *matHeaderCellDef  mat-sort-header>
+                            Nombre </th>
+                        <td mat-row *matCellDef="let element"> {{element.nombreAnimal}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Sx">
+                        <th mat-header-row *matHeaderCellDef  mat-sort-header>
+                            sx</th>
+                        <td mat-row *matCellDef="let element"> {{element.sexoAnimal}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Conc">
+                        <th mat-header-row *matHeaderCellDef  mat-sort-header>
+                            Conc </th>
+                        <td mat-row *matCellDef="let element"> {{element.tipoConcep}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="RegMadre">
+                        <th mat-header-row *matHeaderCellDef  mat-sort-header>
+                            Reg. <br>Madre </th>
+                        <td mat-row *matCellDef="let element"> {{element.numeroRegistroMadre}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Regpadre">
+                        <th mat-header-row *matHeaderCellDef  mat-sort-header>
+                            Reg. <br>Padre </th>
+                        <td mat-row *matCellDef="let element"> {{element.numeroRegistroPadre}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="FechaNacimiento">
+                        <th mat-header-row *matHeaderCellDef  mat-sort-header>
+                            Fh. <br>Nacimiento </th>
+                        <td mat-row *matCellDef="let element"> {{element.fecNace}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Criador">
+                        <th mat-header-row *matHeaderCellDef  mat-sort-header>
+                            Criador</th>
+                        <td mat-row *matCellDef="let element"> {{element.nombreCriador}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="HdaCriador">
+                        <th mat-header-row *matHeaderCellDef  mat-sort-header>
+                            Hda. <br> Criador </th>
+                        <td mat-row *matCellDef="let element"> {{element.codigoHdaCriador}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="NombreHdaCriador">
+                        <th mat-header-row *matHeaderCellDef  mat-sort-header>
+                            Nombre Hda <br>Criador </th>
+                        <td mat-row *matCellDef="let element"> {{element.nombreHdaCriador}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Estado">
+                        <th mat-header-row *matHeaderCellDef  mat-sort-header>
+                            Estado </th>
+                        <td mat-row *matCellDef="let element"> {{element.estadoAnimal}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="SubEstado">
+                        <th mat-header-row *matHeaderCellDef  mat-sort-header>
+                            Sub-Estado </th>
+                        <td mat-row *matCellDef="let element"> {{element.subEstado}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+                    <tr class="mat-row" *matNoDataRow>
+                        <td class="mat-row" colspan="100">No se encontraron datos </td>
+                    </tr>
+                </table>
+            </section>
+            <mat-paginator [pageSize]="5" [pageSizeOptions]="[ 5, 10, 15]" showFirstLastButtons
+                aria-label="Selecciona la pagina">
+            </mat-paginator>
+        </div>
+    </div>
+</div>

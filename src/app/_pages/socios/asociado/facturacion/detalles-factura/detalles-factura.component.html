@@ -1,0 +1,62 @@
+<div class="card">
+    <div class="card-header bg-success text-white" style="text-align: center;">
+        <h1 class="card-title text-white">
+            Detalle de factura
+        </h1>
+    </div>
+    <div class="card-body fondo">
+        <div class=" no-block align-items-center">
+            <mat-form-field>
+                <mat-label>Filter</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+            </mat-form-field>
+
+            <section class="example-container mat-elevation-z8" tabindex="0">
+                <table mat-table [dataSource]="dataSource" class="table table-striped " matSort>
+
+                    <ng-container matColumnDef="Numero">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;width: 10%;" mat-sort-header> Número
+                        </th>
+                        <td mat-cell *matCellDef="let element"> {{element.numDoc}} </td>
+                    </ng-container>
+    
+    
+                    <ng-container matColumnDef="FechaSolicitud">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;width: 15%;" mat-sort-header> Fecha
+                            de solicitud </th>
+                        <td mat-cell *matCellDef="let element"> {{element.fechaSolicitud}} </td>
+                    </ng-container>
+    
+    
+                    <ng-container matColumnDef="Registro">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;width: 20%;" mat-sort-header>
+                            Registro </th>
+                        <td mat-cell *matCellDef="let element"> {{element.registro}} </td>
+                    </ng-container>
+    
+    
+                    <ng-container matColumnDef="Descripcion">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;width: 35%;" mat-sort-header>
+                            Descripcion </th>
+                        <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+                    </ng-container>
+    
+    
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+    
+                    <tr class="mat-row" *matNoDataRow>
+                        <td class="mat-cell" colspan="4">No se encontraron datos </td>
+                    </tr>
+                </table>
+            </section>
+
+            <div class="col-12 row">
+                <a class="col-md-5 col-sm"></a>
+                <button mat-button mat-dialog-close class="col-md-2 col-sm btn-primary text-black">Cerrar</button>
+                <a class="col-md-5 col-sm"></a>
+            </div>
+        </div>
+    </div>
+</div>

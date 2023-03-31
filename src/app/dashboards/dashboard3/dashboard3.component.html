@@ -1,0 +1,369 @@
+<!-- ============================================================== -->
+<!-- Info box -->
+<!-- ============================================================== -->
+<div class="row">
+  <div class="col-12">
+    <app-income-counter></app-income-counter>
+  </div>
+</div>
+<!-- ============================================================== -->
+<!-- Campaign -->
+<!-- ============================================================== -->
+<div class="row">
+  <div class="col-lg-8">
+    <div class="card">
+      <div class="card-body">
+        <div class="d-md-flex mb-3">
+          <h5 class="card-title mb-0 align-self-center">Newsletter Campaign</h5>
+          <div class="ms-auto align-self-center">
+            <ul class="list-inline fs-2">
+              <li class="list-inline-item">
+                <i class="fa fa-circle text-success"></i> Open Rate
+              </li>
+              <li class="list-inline-item">
+                <i class="fa fa-circle text-info"></i> Payment
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div style="height: 330px">
+          <canvas
+            baseChart
+            [datasets]="lineChartData"
+            [labels]="lineChartLabels"
+            [options]="lineChartOptions"
+            [colors]="lineChartColors"
+            [legend]="lineChartLegend"
+            [chartType]="lineChartType"
+          >
+          </canvas>
+        </div>
+        <div class="row text-center">
+          <div class="col-lg-4 col-md-4 mt-4">
+            <h2 class="mb-0 fw-light">5098</h2>
+            <small class="text-muted">Total Sent</small>
+          </div>
+          <div class="col-lg-4 col-md-4 mt-4">
+            <h2 class="mb-0 fw-light">4156</h2>
+            <small class="text-muted">Mail Open Rate</small>
+          </div>
+          <div class="col-lg-4 col-md-4 mt-4">
+            <h2 class="mb-0 fw-light">1369</h2>
+            <small class="text-muted">Click Rate</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex mb-3 no-block">
+          <h5 class="card-title mb-0 align-self-center">Our Visitors</h5>
+        </div>
+        <div class="piechart">
+          <x-chartist
+            class=""
+            [data]="donuteChart1.data"
+            [type]="donuteChart1.type"
+            [options]="donuteChart1.options"
+            [responsiveOptions]="donuteChart1.responsiveOptions"
+            [events]="donuteChart1.events"
+          >
+          </x-chartist>
+        </div>
+        <ul class="list-inline mt-3 text-center fs-2">
+          <li class="list-inline-item">
+            <i class="fa fa-circle text-purple"></i> Tablet
+          </li>
+          <li class="list-inline-item">
+            <i class="fa fa-circle text-success"></i> Desktops
+          </li>
+          <li class="list-inline-item">
+            <i class="fa fa-circle text-info"></i> Mobile
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ============================================================== -->
+<!-- End Campaign -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- Today's Schedule and sales overview -->
+<!-- ============================================================== -->
+<div class="row">
+  <div class="col-lg-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Today's Schedule</h5>
+        <h6 class="card-subtitle">check out your daily schedule</h6>
+        <div class="steamline position-relative border-start ms-4 mt-4">
+          <div class="sl-item my-3 py-1 border-bottom">
+            <div
+              class="
+                sl-left
+                float-start
+                text-center
+                rounded-circle
+                text-white
+                me-3
+                bg-success
+              "
+            >
+              <i class="ti-user"></i>
+            </div>
+            <div class="sl-right ps-4">
+              <div class="font-medium fs-3">
+                Meeting today <span class="sl-date"> 5pm</span>
+              </div>
+              <div class="desc fs-3">you can write anything</div>
+            </div>
+          </div>
+          <div class="sl-item my-3 py-1 border-bottom">
+            <div
+              class="
+                sl-left
+                float-start
+                text-center
+                rounded-circle
+                text-white
+                me-3
+                bg-info
+              "
+            >
+              <i class="fa fa-image"></i>
+            </div>
+            <div class="sl-right ps-4">
+              <div class="font-medium fs-3">Send documents to Clark</div>
+              <div class="desc fs-3">Lorem Ipsum is simply</div>
+            </div>
+          </div>
+          <div class="sl-item my-3 py-1 border-bottom">
+            <div
+              class="
+                sl-left
+                float-start
+                text-center
+                rounded-circle
+                text-white
+                me-3
+              "
+            >
+              <img
+                class="rounded-circle"
+                alt="user"
+                src="../assets/images/users/user1.jpg"
+              />
+            </div>
+            <div class="sl-right ps-4">
+              <div class="font-medium fs-3">
+                John Doe <span class="sl-date"> 5pm</span>
+              </div>
+              <div class="desc fs-3">Call today with gohn doe</div>
+            </div>
+          </div>
+          <div class="sl-item my-3 py-1 border-bottom">
+            <div
+              class="
+                sl-left
+                float-start
+                text-center
+                rounded-circle
+                text-white
+                me-3
+              "
+            >
+              <img
+                class="rounded-circle"
+                alt="user"
+                src="../assets/images/users/user2.jpg"
+              />
+            </div>
+            <div class="sl-right ps-4">
+              <div class="font-medium fs-3">
+                Go to the Doctor <span class="sl-date">5 minutes ago</span>
+              </div>
+              <div class="desc fs-3">Contrary to popular belief</div>
+            </div>
+          </div>
+          <div class="sl-item mt-3 py-1 border-bottom">
+            <div
+              class="
+                sl-left
+                float-start
+                text-center
+                rounded-circle
+                text-white
+                me-3
+              "
+            >
+              <img
+                class="rounded-circle"
+                alt="user"
+                src="../assets/images/users/user3.jpg"
+              />
+            </div>
+            <div class="sl-right ps-4">
+              <div>
+                <a href="#">Tiger Sroff</a>
+                <span class="sl-date">5 minutes ago</span>
+              </div>
+              <div class="desc fs-3">
+                Approve meeting with tiger <br /><a
+                  href="javascript:void(0)"
+                  class="btn btn-sm mt-2 me-1 btn-rounded btn-outline-success"
+                  >Apporve</a
+                >
+                <a
+                  href="javascript:void(0)"
+                  class="btn btn-sm mt-2 btn-rounded btn-outline-danger"
+                  >Refuse</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Column -->
+  <div class="col-lg-8">
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex">
+          <div>
+            <h5 class="card-title">Sales Overview</h5>
+            <h6 class="card-subtitle">Check the monthly sales</h6>
+          </div>
+        </div>
+      </div>
+      <div class="card-body bg-light">
+        <div class="row">
+          <div class="col-md-6">
+            <h2 class="mb-0">March 2021</h2>
+            <h4 class="fw-light mt-0 mb-0">Report for this month</h4>
+          </div>
+          <div
+            class="
+              col-md-6
+              align-self-center
+              display-6
+              text-info text-start text-md-end
+            "
+          >
+            $3,690
+          </div>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-hover no-wrap align-middle fs-3">
+          <thead>
+            <tr>
+              <th class="text-center">#</th>
+              <th>NAME</th>
+              <th>STATUS</th>
+              <th>DATE</th>
+              <th>PRICE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-center">1</td>
+              <td class="txt-oflo">Elite admin</td>
+              <td>
+                <span class="badge bg-success rounded">SALE</span>
+              </td>
+              <td class="txt-oflo">April 18, 2017</td>
+              <td><span class="text-success">$24</span></td>
+            </tr>
+            <tr>
+              <td class="text-center">2</td>
+              <td class="txt-oflo">Real Homes WP Theme</td>
+              <td>
+                <span class="badge bg-info rounded">EXTENDED</span>
+              </td>
+              <td class="txt-oflo">April 19, 2017</td>
+              <td><span class="text-info">$1250</span></td>
+            </tr>
+            <tr>
+              <td class="text-center">3</td>
+              <td class="txt-oflo">Ample Admin</td>
+              <td>
+                <span class="badge bg-info rounded">EXTENDED</span>
+              </td>
+              <td class="txt-oflo">April 19, 2017</td>
+              <td><span class="text-info">$1250</span></td>
+            </tr>
+            <tr>
+              <td class="text-center">4</td>
+              <td class="txt-oflo">Medical Pro WP Theme</td>
+              <td><span class="badge bg-danger rounded">TAX</span></td>
+              <td class="txt-oflo">April 20, 2017</td>
+              <td><span class="text-danger">-$24</span></td>
+            </tr>
+            <tr>
+              <td class="text-center">5</td>
+              <td class="txt-oflo">Hosting press html</td>
+              <td>
+                <span class="badge bg-warning rounded">SALE</span>
+              </td>
+              <td class="txt-oflo">April 21, 2017</td>
+              <td><span class="text-success">$24</span></td>
+            </tr>
+            <tr>
+              <td class="text-center">6</td>
+              <td class="txt-oflo">Digital Agency PSD</td>
+              <td>
+                <span class="badge bg-success rounded">SALE</span>
+              </td>
+              <td class="txt-oflo">April 23, 2017</td>
+              <td><span class="text-danger">-$14</span></td>
+            </tr>
+            <tr>
+              <td class="text-center">7</td>
+              <td class="txt-oflo">Helping Hands WP Theme</td>
+              <td>
+                <span class="badge bg-warning rounded">member</span>
+              </td>
+              <td class="txt-oflo">April 22, 2017</td>
+              <td><span class="text-success">$64</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- Column -->
+</div>
+<!-- ============================================================== -->
+<!-- Projects of the Month -->
+<!-- ============================================================== -->
+<div class="row">
+  <!-- Column -->
+  <div class="col-lg-8">
+    <app-project></app-project>
+  </div>
+  <!-- Column -->
+  <div class="col-lg-4">
+    <app-profile-box></app-profile-box>
+  </div>
+</div>
+<!-- ============================================================== -->
+<!-- End Projects of the Month -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- Activity and To do list -->
+<!-- ============================================================== -->
+<div class="row">
+  <div class="col-lg-6 col-md-12">
+    <app-activity-timeline></app-activity-timeline>
+  </div>
+  <div class="col-lg-6">
+    <app-to-do></app-to-do>
+  </div>
+</div>
+<!-- ============================================================== -->
+<!-- End Comment - chats -->
+<!-- ============================================================== -->

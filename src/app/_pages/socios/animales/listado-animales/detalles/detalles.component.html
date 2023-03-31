@@ -1,0 +1,152 @@
+<button class="btn btn-secondary" style="float: right;"mat-dialog-close>X</button>
+<form [formGroup]="datosIniciales">
+    <div class="col-12">
+        <!-- Card -->
+        <div class="card">
+            <div class="row">
+                <h4 class="card-title col-md-9 col-sm">Datos del Animal</h4>
+
+            </div>
+
+            <div class="card-body form-group row">
+                <div class="col-lg-3 col-md-3 col-sm">
+                    <h5>Nro. Registro</h5>
+                    <input type="text" class="form-control" formControlName="NroRegistro" [(ngModel)]="NroRegistro" [attr.disabled]="true">
+                </div>
+
+                <div class="col-lg-2 col-md-2 col-sm">
+                    <h5>Número</h5>
+                    <input type="text" class="form-control" formControlName="Numero" [attr.disabled]="true">
+
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm">
+                    <h5>Nombre</h5>
+                    <input type="text" class="form-control" formControlName="Nombre" [attr.disabled]="true">
+                </div>
+
+
+            </div>
+        </div>
+        <!-- Card -->
+    </div>
+</form>
+<form [formGroup]="InformacionDelRegistro">
+    <div class="col-12">
+        <!-- Card -->
+        <div class="card">
+            <div class="row">
+                <h4 class="card-title col-md-9 col-sm">Informacion del Registro</h4>
+            </div>
+
+            <div class="card-body form-group row">
+
+                <div class="col-md-3 col-sm">
+                    <h5>Fecha Registro </h5>
+                    <input type="text" class="form-control" formControlName="FechaRegistro" [attr.disabled]="true">
+
+                </div>
+                <div class="col-md-3 col-sm">
+                    <h5>Tiquete</h5>
+                    <input type="text" class="form-control" formControlName="NoTiquete" [attr.disabled]="true">
+
+                </div>
+                <div class="col-md-3 col-sm">
+                    <h5>Frcha Radicacion </h5>
+                    <input type="text" class="form-control" formControlName="FechaRad" [attr.disabled]="true">
+                </div>
+
+                <div class="col-md-3 col-sm">
+                    <h5>Extemporaneo</h5>
+                    <input type="text" class="form-control" formControlName="ExtempoAnimal" [attr.disabled]="true">
+
+                </div>
+                <div class="col-md-3 col-sm">
+                    <h5>Sexo</h5>
+                    <input type="text" class="form-control" formControlName="SexoAnimalCompleto" [attr.disabled]="true">
+
+                </div>
+                <div class="col-md-3 col-sm">
+                    <h5>Raza</h5>
+                    <input type="text" class="form-control" formControlName="NombreRaza" [attr.disabled]="true">
+                </div>
+                <div class="col-md-3 col-sm">
+                    <h5>Nacimiento</h5>
+                    <input type="text" class="form-control" formControlName="NacidoPorCompleto" [attr.disabled]="true">
+
+                </div>
+                <div class="col-md-3 col-sm">
+                    <h5>Fecha Nacimiento</h5>
+                    <input type="text" class="form-control" formControlName="FechaNace" [attr.disabled]="true">
+
+                </div>
+                <div class="col-md-3 col-sm">
+                    <h5>Gemelo</h5>
+                    <input type="text" class="form-control" formControlName="IdAnimalGemelo" [attr.disabled]="true">
+                </div>
+                <div class="col-md-3 col-sm">
+                    <h5>Hermano</h5>
+                    <input type="text" class="form-control" formControlName="Hermano" [attr.disabled]="true">
+
+                </div>
+                <div class="col-md-3 col-sm">
+                    <h5>Comcebido</h5>
+                    <input type="text" class="form-control" formControlName="TipoConcepCompleto" [attr.disabled]="true">
+
+                </div>
+                <div class="col-md-3 col-sm">
+                    <h5>Color</h5>
+                    <input type="text" class="form-control" formControlName="NombreColor" [attr.disabled]="true">
+                </div>
+            </div>
+        </div>
+        <!-- Card -->
+    </div>
+</form>
+<div>
+    <div class="row">
+        <button type="button" class="col col-sm btn btn-outline-info" (click)="ventana('DatosBasicos')">
+            Datos Básicos
+        </button>
+        <button type="button" class="col col-sm btn btn-outline-warning" (click)="ventana('Genealogia')">
+            Genealogia
+        </button>
+        <button type="button" class="col col-sm btn btn-outline-info" (click)="ventana('Hijos')">
+            Hijos
+        </button>
+        <button type="button" class="col col-sm btn btn-outline-warning" (click)="ventana('Visitas')">
+            Visitas
+        </button>
+        <button type="button" class="col col-sm btn btn-outline-info" (click)="ventana('Embriones')">
+            Embriones
+        </button>
+        <button type="button" class="col col-sm btn btn-outline-warning" (click)="ventana('Ferias')">
+            Ferias
+        </button>
+        <button type="button" class="col col-sm btn btn-outline-info" (click)="ventana('EvaluacionGenetica')">
+            Evaluacion Genetica
+        </button>
+        <button type="button" class="col col-sm btn btn-outline-warning" (click)="ventana('Traspasos')">
+            Traspasos
+        </button>
+    </div>
+
+
+    <container-element [ngSwitch]="redireccion">
+
+
+        <app-datos-basicos-animal *ngSwitchCase="'DatosBasicos'" [datos]="datos">
+        </app-datos-basicos-animal>
+
+        <app-genealogia *ngSwitchCase="'Genealogia'" [idAnimal]="idAnimal">
+        </app-genealogia>
+
+        <app-hijos *ngSwitchCase="'Hijos'" [idAnimal]="idAnimal" [genero]="datos.SexoAnimalCompleto">
+        </app-hijos>
+
+        <app-datos-basicos-animal *ngSwitchDefault>
+        </app-datos-basicos-animal>
+
+
+    </container-element>
+
+</div>

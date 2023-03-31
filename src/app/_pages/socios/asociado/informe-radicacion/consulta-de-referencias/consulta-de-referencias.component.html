@@ -1,0 +1,56 @@
+<div class="card">
+    <div class="card-header bg-info text-white" style="text-align: center;">
+        <h4 class="card-title text-white">
+            Opciones De Busqueda
+        </h4>
+    </div>
+
+    <div class="card-body">
+        <div class="row">
+            <div class=" no-block align-items-center mat-elevation-z8">
+                <mat-form-field style="padding: 10px;">
+                    <mat-label>Filter</mat-label>
+                    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+                </mat-form-field>
+
+                <section class="example-container mat-elevation-z8" tabindex="0">
+                    <table mat-table [dataSource]="dataSource" class="table table-striped " matSort>
+
+
+                        <ng-container matColumnDef="Referencia">
+                            <th mat-header-cell *matHeaderCellDef style="text-align: center;"
+                                mat-sort-header> Num. <br> Referencia
+                            </th>
+                            <td mat-cell *matCellDef="let element"> {{element.Referencia}} </td>
+                        </ng-container>
+
+
+                        <ng-container matColumnDef="Estado">
+                            <th mat-header-cell *matHeaderCellDef style="text-align: center;"
+                                mat-sort-header> Estado </th>
+                            <td mat-cell *matCellDef="let element"> {{element.Estado}} </td>
+                        </ng-container>
+
+
+                        
+
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+                        <tr class="mat-row" *matNoDataRow>
+                            <td class="mat-cell" colspan="10">No se encontraron datos </td>
+                        </tr>
+                    </table>
+                </section>
+            </div>
+            <div class="row col-12">
+                <span class="col-md-5"></span>
+                <button mat-button mat-dialog-close class=" col-md-2 col-sm" >Cerrar</button>
+                <span class="col-md-5"></span>
+            </div>
+            
+        </div>
+    </div>
+</div>

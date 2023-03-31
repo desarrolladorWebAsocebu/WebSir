@@ -1,0 +1,158 @@
+<div class="card">
+    <div class="card-header bg-success text-white" style="text-align: center;">
+        <h1 class="card-title text-white">
+            Informe Actualización de Datos
+        </h1>
+    </div>
+    <div class="card-body">
+        <div class="card">
+            <div class="card-header bg-info text-white" style="text-align: center;">
+                <h4 class="card-title text-white">
+                    Opciones De Busqueda
+                </h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <form class="mt-3 row col-12" [formGroup]="elemento" (ngSubmit)="onSubmit()">
+                        <div class="col-12">
+                            <h4>Período de Consulta:</h4>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="input-group mt-3 ">
+                                <label class="col-12">Desde:</label>
+                                <span class="input-group-text">
+                                    <i class="sl-icon-calender"></i>
+                                </span>
+                                <input type="date" class="" aria-label="FechaInicio" aria-describedby="basic-addon1"
+                                    formControlName="FechaInicio">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="input-group mt-3 ">
+                                <label class="col-12">Hasta:</label>
+                                <span class="input-group-text" id="basic-addon2">
+                                    <i class="sl-icon-calender"></i>
+                                </span>
+
+                                <input type="date" class="" aria-label="FechaFin" aria-describedby="basic-addon1"
+                                    formControlName="FechaFin">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group mt-3 col-md-3 col-sm">
+
+                            <button class="btn d-block w-100 btn-lg btn-info" type="submit">Consultar</button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header bg-info text-white" style="text-align: center;">
+                <h4 class="card-title text-white">
+                    Informe
+                </h4>
+            </div>
+            <div class="card-body">
+                <div class=" no-block align-items-center mat-elevation-z8">
+                    <mat-form-field style="padding: 10px;">
+                        <mat-label>Filter</mat-label>
+                        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+                    </mat-form-field>
+
+
+                    <section class="example-container mat-elevation-z8" tabindex="0">
+                        <table mat-table [dataSource]="dataSource" class="table table-striped " matSort>
+
+
+                            <ng-container matColumnDef="FechaIngreso">
+                                <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header> Fecha
+                                    Ingreso
+                                </th>
+                                <td mat-cell *matCellDef="let element"> {{element.cedulaPersona}} </td>
+                            </ng-container>
+
+
+                            <ng-container matColumnDef="Direccion">
+                                <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header>
+                                    Direccion </th>
+                                <td mat-cell *matCellDef="let element"> {{element.nombrePersona}} </td>
+                            </ng-container>
+
+
+                            <ng-container matColumnDef="CiudadDireccion">
+                                <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header>Ciudad
+                                    <br> Direccion
+                                </th>
+                                <td mat-cell *matCellDef="let element"> {{element.estadoPersona}} </td>
+                            </ng-container>
+
+
+                            <ng-container matColumnDef="Celular">
+                                <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header>
+                                    Celular </th>
+                                <td mat-cell *matCellDef="let element"> {{element.estadoPersona}} </td>
+                            </ng-container>
+                            <ng-container matColumnDef="Telefono1">
+                                <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header>
+                                    Telefono 1 </th>
+                                <td mat-cell *matCellDef="let element"> {{element.estadoPersona}} </td>
+                            </ng-container>
+                            <ng-container matColumnDef="Telefono2">
+                                <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header>
+                                    Telefono 2</th>
+                                <td mat-cell *matCellDef="let element"> {{element.estadoPersona}} </td>
+                            </ng-container>
+                            <ng-container matColumnDef="Email">
+                                <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header>Email
+                                </th>
+                                <td mat-cell *matCellDef="let element"> {{element.estadoPersona}} </td>
+                            </ng-container>
+                            <ng-container matColumnDef="EstadoTramite">
+                                <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header>Estado
+                                    Tramite </th>
+                                <td mat-cell *matCellDef="let element"> {{element.estadoPersona}} </td>
+                            </ng-container>
+                            <ng-container matColumnDef="Fecturacion">
+                                <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header>
+                                    Facturación</th>
+                                <td mat-cell *matCellDef="let element"> {{element.estadoPersona}} </td>
+                            </ng-container>
+                            <ng-container matColumnDef="Directorio">
+                                <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header>
+                                    Directorio</th>
+                                <td mat-cell *matCellDef="let element"> {{element.estadoPersona}} </td>
+                            </ng-container>
+
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+                            <tr class="mat-row" *matNoDataRow>
+                                <td class="mat-cell" colspan="10">No se encontraron datos </td>
+                            </tr>
+                        </table>
+                        <div class="row">
+                            <div class="form-group mt-3 col-md-1 col-sm">
+
+                                <button class="btn d-block btn-info" type="submit">Imprimir</button>
+
+                            </div>
+                            <a class="col-md-5"></a>
+                            <mat-paginator class="col-md-6 col sm" [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"
+                                showFirstLastButtons aria-label="Selecciona pagina">
+                            </mat-paginator>
+                            
+                        </div>
+
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

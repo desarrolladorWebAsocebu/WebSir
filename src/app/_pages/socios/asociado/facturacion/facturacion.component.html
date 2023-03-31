@@ -1,0 +1,91 @@
+<div class="card">
+    <div class="row">
+        <a class="card-title col-md-12 col-sm" 
+        style="text-align: center; 
+                font-size: 30px;
+                color: rgb(0, 0, 0);
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                padding: 30px;">
+                Historial de Factuaracion
+        </a>
+        
+        
+    </div>
+
+    <div class="card-body form-group row">
+
+        <a class="col-md-2 col-sm"></a>
+        <div class="col-md-3 col-sm ">
+            <button class=" btn btn-outline-info" >Ver instructivo</button>
+        </div>
+        
+        <div class="col-md-3 col-sm ">
+            <button class="btn btn-outline-info">Estado de cuenta</button>
+        </div>
+        
+        <div class="col-md-3 col-sm ">
+            <button class="btn btn-outline-info" >Pague su factura aqui</button>
+        </div>
+        
+        <a class="col-md-12 col-sm " style="color: brown;text-align: center;">Por favor enviar los soportes de pago al correo cartera@asocebu.com, para realizar actualización de los pagos</a>
+
+    </div>
+</div>
+<div>
+    <mat-form-field>
+		<mat-label>Filter</mat-label>
+		<input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+	  </mat-form-field>
+	  
+	  <table mat-table [dataSource]="dataSource" class="table table-striped " matSort>
+	  
+		
+		<ng-container matColumnDef="NumFactura">
+		  <th mat-header-cell *matHeaderCellDef style="text-align: center;width: 15%;"mat-sort-header> Núm De Factura </th>
+		  <td mat-cell *matCellDef="let element"> {{element.factura}} </td>
+		</ng-container>
+	  
+		
+		<ng-container matColumnDef="FechaFactura">
+		  <th mat-header-cell *matHeaderCellDef style="text-align: center;width: 15%;" mat-sort-header> Fercha De Factura </th>
+		  <td mat-cell *matCellDef="let element"> {{element.fecha}} </td>
+		</ng-container>
+	  
+		
+		<ng-container matColumnDef="EstadoFactura">
+		  <th mat-header-cell *matHeaderCellDef style="text-align: center;width: 10%;"mat-sort-header> Estado De Factura </th>
+		  <td mat-cell *matCellDef="let element"> {{element.estadoDescrip}} </td>
+		</ng-container>
+	  
+		
+		<ng-container matColumnDef="impresión">
+		  <th mat-header-cell *matHeaderCellDef style="text-align: center;width: 15%;"mat-sort-header> Impresion </th>
+		  <td mat-cell *matCellDef="let element">
+            <button class=" btn btn-outline-success" >
+                <i class="sl-icon-printer"></i>
+                Imprimir
+            </button>
+          </td>
+		</ng-container>
+
+		<ng-container matColumnDef="Detalles">
+		  <th mat-header-cell *matHeaderCellDef style="text-align: center;width: 15%;"mat-sort-header> Detalles </th>
+		  <td mat-cell *matCellDef="let element">
+            <button class=" btn btn-outline-success" (click)="detalles(element.fecha)">
+                <i class="sl-icon-share-alt"></i>
+                Detalles
+            </button>
+          </td>
+		</ng-container>
+		
+		
+	  
+		<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+		<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+	  
+		
+		<tr class="mat-row" *matNoDataRow>
+		  <td class="mat-cell" colspan="4">No se encontraron datos "{{input.value}}"</td>
+		</tr>
+	  </table>
+</div>

@@ -1,0 +1,30 @@
+.example-container {
+    height: 400px;
+    width: 100%;
+    max-width: 100%;
+    overflow:auto;
+    padding: 10px;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  td.mat-column-star {
+    width: 20px;
+    padding-right: 8px;
+    text-align: center;
+  }
+  
+  th.mat-column-position, td.mat-column-position {
+    padding-left: 8px;
+    text-align: center;
+  }
+  
+  .mat-mdc-table-sticky-border-elem-right {
+    border-left: 1px solid #b81a1a;
+  }
+  
+  .mat-mdc-table-sticky-border-elem-left {
+    border-right: 1px solid #b40d0d;
+  }

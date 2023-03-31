@@ -1,0 +1,68 @@
+<div class="auth-wrapper d-flex justify-content-center align-items-center" style="background:url(assets/images/background/login-register.jpg) no-repeat center center;">
+    <div class="auth-box m-3 m-md-0">
+        <div id="loginform" [ngClass]="{'d-none': recoverform}">
+            <div class="text-center">
+                <span class="db"><img src="assets/images/logo-icon.png" alt="logo" /></span>
+                <h5 class="font-medium mb-4">Bienvenido a la Plataforma Web Asocebú</h5>
+            </div>
+            <!-- Form -->
+            <div class="row">
+                <div class="col-12">
+                    <form class="form-horizontal mt-3" id="loginform"(ngSubmit)="onSubmit()">
+                        <div class="input-group mb-3"> 
+                                <span class="input-group-text" id="basic-addon1"><i class="ti-user"></i></span>
+                             
+                            <input type="text" class="form-control" placeholder="Asociado:" aria-label="Username" aria-describedby="basic-addon1" formControlName="codigoSocio">
+                        </div>
+                        <div class="input-group mb-3"> 
+                                <span class="input-group-text" id="basic-addon2"><i class="ti-pencil"></i></span>
+                            
+                            <input type="password" class="form-control" placeholder="Clave:" aria-label="Password" aria-describedby="basic-addon1" formControlName="passWeb">
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <div style="text-align: center;" >
+                                    <a (click)="showRecoverForm()" href="javascript:void(0)" id="to-recover" class="text-dark"><i class="fa fa-lock "></i> Restablecer Contraseña.</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group text-center mt-3">
+                            <div class="col-xs-12">
+                                <button class="btn d-block w-100 btn-lg btn-info" type="submit">Ingresar</button>
+                            </div>
+                        </div>
+                    </form>
+                    <br><br><br>
+                    <div style="text-align: center;" href="">
+                        <img src="" alt="" >
+                        Manual de usuarios plataforma SIR
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="recoverform" [ngClass]="{'d-block': recoverform}">
+            <div class="logo">
+                <span class="db"><img src="assets/images/logo-icon.png" alt="logo" /></span>
+                <h5 class="font-medium mb-4">Recover Password</h5>
+                <span>Enter your Email and instructions will be sent to you!</span>
+            </div>
+            <div class="row mt-3">
+                <!-- Form -->
+                <form class="col-12">
+                    <!-- email -->
+                    <div class="form-group row">
+                        <div class="col-12">
+                            <input class="form-control form-control-lg" type="email" required="" placeholder="Username">
+                        </div>
+                    </div>
+                    <!-- pwd -->
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <button class="btn d-block w-100 btn-lg btn-danger" type="submit" name="action">Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

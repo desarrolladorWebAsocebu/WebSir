@@ -1,0 +1,83 @@
+<div class="card">
+    <div class="card-header bg-success text-white" style="text-align: center;">
+        <h1 class="card-title text-white">
+            Haciendas
+        </h1>
+    </div>
+    <div class="card-body">
+        <div class=" no-block align-items-center mat-elevation-z8">
+            <mat-form-field style="padding: 10px;">
+                <mat-label>Filter</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+            </mat-form-field>
+
+            <section class="example-container mat-elevation-z8" tabindex="0">
+                <table mat-table [dataSource]="dataSource" class="table table-striped " matSort>
+
+                    <ng-container matColumnDef="Codigo">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header>
+                            Codigo </th>
+                        <td mat-cell *matCellDef="let element"> {{element.codigoHda}} </td>
+                    </ng-container>
+
+
+                    <ng-container matColumnDef="Nombre">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header> Nombre </th>
+                        <td mat-cell *matCellDef="let element"> {{element.nombreHda}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Prefijo">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header>Prefijo</th>
+                        <td mat-cell *matCellDef="let element"> {{element.prefijoHda}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Ciudad">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header>
+                            Ciudad </th>
+                        <td mat-cell *matCellDef="let element"> {{element.ciudadSinZona}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Mostrar">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header>
+                            Mostrar</th>
+                        <td mat-cell *matCellDef="let element">
+                            <button class="btn btn-outline-info" (click)="detalles(element)">
+                                <i class="sl-icon-size-fullscreen"></i>
+                            </button>
+                        </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+                    <tr class="mat-row" *matNoDataRow>
+                        <td class="mat-cell" colspan="10">No se encontraron datos </td>
+                    </tr>
+                </table>
+            </section>
+            <mat-paginator  [pageSize]="5" [pageSizeOptions]="[5, 10 ]" showFirstLastButtons
+                aria-label="Selecciona la pagina">
+            </mat-paginator>
+        </div>
+        <div class="card">
+            <div class="card-header bg-info text-white" style="text-align: center;">
+                <h4 class="card-title text-white">
+                    Informe
+                </h4>
+            </div>
+            <div class="card-body">
+                <div>
+                    <div class="row">
+                        <button type="button" class="col-6 btn btn-outline-info" routerLink="datosBasicos" routerLinkActive="active">
+                            Datos básicos
+                        </button>
+                        <button type="button" class="col-6 btn btn-outline-warning" routerLink="animales" routerLinkActive="active">
+                            Animales
+                        </button>
+                    </div>
+                
+                    <router-outlet></router-outlet>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div style="background-color: rgba(195, 235, 180, 0.747); padding: 15px;">
+
+
+
+	<table class="table table-striped" >
+		<thead>
+			<tr>
+				<th scope="col" sortable="ciudad" (sort)="onSort($event)">Ciudad</th>
+				<th scope="col" sortable="nadetaDireccionme" (sort)="onSort($event)">Direccion</th>
+				<th scope="col" sortable="emailDireccion" (sort)="onSort($event)">Email</th>
+				<th scope="col" sortable="tel1Direccion" (sort)="onSort($event)">Telefono</th>
+				<th scope="col" sortable="celularDireccion" (sort)="onSort($event)">Celular</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+
+			<tr *ngFor="let direccion of datos;index as i ">
+				<td>{{direccion.ciudad}}</td>
+				<td>{{direccion.detaDireccion}}</td>
+				<td>{{direccion.emailDireccion}}</td>
+				<td>{{direccion.tel1Direccion}}</td>
+				<td>{{direccion.celularDireccion}}</td>
+			</tr>
+
+		</tbody>
+	</table>
+</div>

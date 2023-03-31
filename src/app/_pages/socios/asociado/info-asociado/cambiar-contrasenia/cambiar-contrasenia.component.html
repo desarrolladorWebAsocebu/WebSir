@@ -1,0 +1,47 @@
+<div class="col-12 cabecera">
+    <h1>
+        Restablecer contraseña
+    </h1> 
+</div>
+<div>
+    <form class="mt-4" (ngSubmit)="onSubmit()" [formGroup]="elemento">
+        <div class="mb-3">
+          <label for="exampleInputEmail1">Codigo</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="codigo"
+            aria-describedby="emailHelp"
+            placeholder="Codigo del socio"
+          />
+          
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1">Nueva Contraseña</label>
+          <input
+            type="password"
+            class="form-control"
+            formControlName="nuevaContraseña"
+            placeholder="Nueva Contraseña"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1">Conformar contraseña</label>
+          <input
+            type="password"
+            class="form-control"
+            formControlName="conformarContraseña"
+            placeholder="Conformar Contraseña"
+          />
+        </div>
+
+
+        <div class="row">
+            <button type="submit" class="btn btn-primary col-md-3 col-sm">Actualizar</button>
+            <a class="col-md-6"></a>
+            <button mat-button mat-dialog-close class=" col-md-3 col-sm" >Cancelar</button>
+        </div>
+        
+      </form>
+      
+</div>

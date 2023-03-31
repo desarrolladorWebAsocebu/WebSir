@@ -1,0 +1,109 @@
+<div class="row">
+    <div class="col-12">
+        <app-project-counter></app-project-counter>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- Over Visitor, Our income , slaes different and  sales prediction -->
+<!-- ============================================================== -->
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-md-flex align-items-center">
+                    <div>
+                        <h5 class="card-title">Sales Chart</h5>
+                    </div>
+                    <div class="ms-auto">
+                        <ul class="list-inline text-center fs-2">
+                            <li class="list-inline-item"><i class="fa fa-circle text-success"></i> Site A</li>
+                            <li class="list-inline-item"><i class="fa fa-circle text-info"></i> Site B</li>
+                            <li class="list-inline-item"><i class="fa fa-circle text-primary"></i> Site C</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="height:355px;">
+                    <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
+                        [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"> </canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+    <div class="col-lg-4 col-md-12">
+        <div class="row">
+            <!-- Column -->
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Sales Difference</h5>
+                        <div class="d-flex">
+                            <div class="align-self-center no-shrink">
+                                <h2 class="mb-0">$4316</h2>
+                                <h6 class="text-muted">(150-165 Sales)</h6>
+                            </div>
+                            <div class="ms-auto mt-3">
+                                <canvas baseChart width="120px" height="120px" [data]="pieChartData" [labels]="pieChartLabels"
+                                    [chartType]="pieChartType" [legend]="lineChartLegend" [colors]="[{backgroundColor: ['#20aee3', '#24d2b5', '#bcc3d3'], borderColor:['#fff', '#fff', '#fff'] }]">
+                                </canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Sales Prediction</h5>
+                        <div class="d-flex">
+                            <div class="align-self-center no-shrink">
+                                <h2 class="mb-0">$3528</h2>
+                                <h6 class="text-muted">(150-165 Sales)</h6>
+                            </div>
+                            <div class="ms-auto mt-3">
+                                <canvas baseChart width="120px" height="120px" [data]="doughnutChartData" [labels]="doughnutChartLabels"
+                                    [chartType]="doughnutChartType" [legend]="lineChartLegend" [colors]="[{backgroundColor: ['#20aee3', '#24d2b5', '#bcc3d3'], borderColor:['#fff', '#fff', '#fff']}]">
+                                </canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+        </div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- Sales Chart and browser state-->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- Projects of the Month -->
+<!-- ============================================================== -->
+<div class="row">
+    <!-- Column -->
+    <div class="col-lg-8">
+        <app-project></app-project>
+    </div>
+    <!-- Column -->
+    <div class="col-lg-4">
+        <app-profile-box></app-profile-box>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- End Projects of the Month -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- Comment - chats -->
+<!-- ============================================================== -->
+<div class="row">
+    <div class="col-lg-6">
+        <app-recent-comment></app-recent-comment>
+    </div>
+    <div class="col-lg-6">
+        <app-feeds></app-feeds>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- End Comment - chats -->
+<!-- ============================================================== -->

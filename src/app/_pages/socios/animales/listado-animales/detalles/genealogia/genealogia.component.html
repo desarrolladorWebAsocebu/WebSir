@@ -1,0 +1,425 @@
+<div class="row" style="padding: 15px;">
+    <div>
+        <button type="button" class="col col-sm btn btn-success" (click)="ventana('Padre')">
+            Padre
+        </button>
+        <button type="button" class="col col-sm btn btn-warning" (click)="ventana('Madre')">
+            Madre
+        </button>
+    </div>
+</div>
+
+<div *ngIf="tipo=='Padre'else madre">
+    <div class="row">
+        <!--padres-->
+        <div class="col-4">
+            <div class="card" style="top: 40%;">
+
+                <div class="card-header bg-info text-white" style="text-align: center;">
+                    <h4 class="card-title text-white">
+                        Padre
+                    </h4>
+                </div>
+                <div class="card-body fondo">
+
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Nombre:</b>{{this.genealigia.nomPadre}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Número:</b>{{this.genealigia.nroPadre}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Registro:</b>{{this.genealigia.regPadre}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Raza:</b>{{this.genealigia.rzNomPadre}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Sexo:</b> Macho </label>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!--abuelos-->
+        <div class="col-4">
+            <div class="card" style="top: 15%;">
+
+                <div class="card-header bg-info text-white" style="text-align: center;">
+                    <h4 class="card-title text-white">
+                        Abuelo
+                    </h4>
+                </div>
+                <div class="card-body fondo">
+
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Nombre:</b>{{this.genealigia.nomAbueloP}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Número:</b>{{this.genealigia.nroAbueloP}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Registro:</b>{{this.genealigia.regAbueloP}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Raza:</b>{{this.genealigia.rzAbueloP}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Sexo:</b> Macho</label>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="card" style="top: 40%;">
+
+                <div class="card-header bg-info text-white" style="text-align: center;">
+                    <h4 class="card-title text-white">
+                        Abuela
+                    </h4>
+                </div>
+                <div class="card-body fondo">
+
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Nombre:</b>{{this.genealigia.nomAbuelaP}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Número:</b>{{this.genealigia.nroAbuelaP}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Registro:</b>{{this.genealigia.regAbuelaP}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Raza:</b>{{this.genealigia.rzAbuelaP}}</label>
+
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Sexo:</b> Hembra</label>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!--bisabuelos-->
+        <div class="col-4">
+            <div class="card" style="top: 2%;">
+                <div class="card-header bg-info text-white" style="text-align: center;">
+                    <h4 class="card-title text-white">
+                        Bisabuelo 1
+                    </h4>
+                </div>
+                <div class="card-body fondo">
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Nombre:</b>{{this.genealigia.nomBisAbloP1}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Número:</b>{{this.genealigia.nroBisAbloP1}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Registro:</b>{{this.genealigia.regBisAbloP1}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Raza:</b>{{this.genealigia.rzBisAboP1}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Sexo:</b> Macho</label>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="top: 2%;">
+                <div class="card-header bg-info text-white" style="text-align: center;">
+                    <h4 class="card-title text-white">
+                        Bisabuelo 2
+                    </h4>
+                </div>
+                <div class="card-body fondo">
+
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Nombre:</b>{{this.genealigia.nomBisAblaP1}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Número:</b>{{this.genealigia.nroBisAblaP1}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Registro:</b>{{this.genealigia.regBisAblaP1}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Raza:</b>{{this.genealigia.rzBisAbaP1}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Sexo:</b> Hembra</label>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="card" style="top: 5%;">
+                <div class="card-header bg-info text-white" style="text-align: center;">
+                    <h4 class="card-title text-white">
+                        Bisabuelo 3
+                    </h4>
+                </div>
+                <div class="card-body fondo">
+
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Nombre:</b>{{this.genealigia.nomBisAbloP2}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Número:</b>{{this.genealigia.nroBisAbloP2}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Registro:</b>{{this.genealigia.regBisAbloP2}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Raza:</b>{{this.genealigia.rzBisAbop2}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Sexo:</b> Macho</label>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="card" style="top: 5%;">
+                <div class="card-header bg-info text-white" style="text-align: center;">
+                    <h4 class="card-title text-white">
+                        Bisabuelo4
+                    </h4>
+                </div>
+                <div class="card-body fondo">
+
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Nombre:</b>{{this.genealigia.nomBisAblaP2}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Número:</b>{{this.genealigia.nroBisAblaP2}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Registro:</b>{{this.genealigia.regBisAblaP2}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Raza:</b>{{this.genealigia.rzBisAbap2}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Sexo:</b> Hembra</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<ng-template #madre>
+    <div class="row">
+        <!--padres-->
+        <div class="col-4">
+            <div class="card" style="top: 40%;">
+
+                <div class="card-header bg-info text-white" style="text-align: center;">
+                    <h4 class="card-title text-white">
+                        Madre
+                    </h4>
+                </div>
+                <div class="card-body fondo">
+
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Nombre:</b>{{this.genealigia.nomMadre}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Número:</b>{{this.genealigia.nroMadre}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Registro:</b>{{this.genealigia.regMadre}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Raza:</b>{{this.genealigia.rzNomMadre}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Sexo:</b> Hembra</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!--abuelos-->
+        <div class="col-4">
+            <div class="card" style="top: 15%;">
+
+
+                <div class="card-header bg-info text-white" style="text-align: center;">
+                    <h4 class="card-title text-white">
+                        Abuelo
+                    </h4>
+                </div>
+                <div class="card-body fondo">
+
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Nombre:</b>{{this.genealigia.nomAbueloM}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Número:</b>{{this.genealigia.nroAbueloM}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Registro:</b>{{this.genealigia.regAbueloM}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Raza:</b>{{this.genealigia.rzAbueloM}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Sexo:</b> Macho</label>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card" style="top: 40%;">
+
+
+                <div class="card-header bg-info text-white" style="text-align: center;">
+                    <h4 class="card-title text-white">
+                        Abuela
+                    </h4>
+                </div>
+                <div class="card-body fondo">
+
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Nombre:</b>{{this.genealigia.nomAbuelaM}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Número:</b>{{this.genealigia.nroAbuelaM}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Registro:</b>{{this.genealigia.regAbuelaM}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Raza:</b>{{this.genealigia.rzAbuelaM}}</label>
+
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Sexo:</b> Hembra</label>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <!--bisabuelos-->
+        <div class="col-4">
+            <div class="card" style="top: 2%;">
+
+                <div class="card-header bg-info text-white" style="text-align: center;">
+                    <h4 class="card-title text-white">
+                        Bisabuelo 1
+                    </h4>
+                </div>
+                <div class="card-body fondo">
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Nombre:</b>{{this.genealigia.nomBisAbloM1}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Número:</b>{{this.genealigia.nroBisAbloM1}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Registro:</b>{{this.genealigia.regBisAbloM1}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Raza:</b>{{this.genealigia.rzBisAboM1}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Sexo:</b> Macho</label>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card" style="top: 2%;">
+                <div class="card-header bg-info text-white" style="text-align: center;">
+                    <h4 class="card-title text-white">
+                        Bisabuelo 2
+                    </h4>
+                </div>
+                <div class="card-body fondo">
+
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Nombre:</b>{{this.genealigia.nomBisAblaM1}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Número:</b>{{this.genealigia.nroBisAblaM1}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Registro:</b>{{this.genealigia.regBisAblaM1}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Raza:</b>{{this.genealigia.rzBisAbaM1}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Sexo:</b> Hembra</label>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="card" style="top: 5%;">
+                <div class="card-header bg-info text-white" style="text-align: center;">
+                    <h4 class="card-title text-white">
+                        Bisabuelo 3
+                    </h4>
+                </div>
+                <div class="card-body fondo">
+
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Nombre:</b>{{this.genealigia.nomBisAbloM2}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Número:</b>{{this.genealigia.nroBisAbloM2}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Registro:</b>{{this.genealigia.regBisAbloM2}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Raza:</b>{{this.genealigia.rzBisAboM2}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Sexo:</b> Macho</label>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="card" style="top: 5%;">
+                <div class="card-header bg-info text-white" style="text-align: center;">
+                    <h4 class="card-title text-white">
+                        Bisabuelo4
+                    </h4>
+                </div>
+                <div class="card-body fondo">
+
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Nombre:</b>{{this.genealigia.nomBisAblaM2}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Número:</b>{{this.genealigia.nroBisAblaM2}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Registro:</b>{{this.genealigia.regBisAblaM2}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Raza:</b>{{this.genealigia.rzBisAbaM2}}</label>
+                    </div>
+                    <div class="input-group x ">
+                        <label class="col-12"><b>Sexo:</b> Hembra</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
